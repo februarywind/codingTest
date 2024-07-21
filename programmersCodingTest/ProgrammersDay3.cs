@@ -2,7 +2,7 @@
 {
     internal class ProgrammersDay3
     {
-        //프로그래머스 입문 Day2
+        //프로그래머스 입문 Day3
         public int solution1(int num1, int num2) // 나머지 구하기
         {
             int answer = num1 % num2;
