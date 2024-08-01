@@ -30,6 +30,43 @@
             }
             return 0;
         }
+        public int solution3(int[,] lines) // 겹치는 선분의 길이
+        {
+            int max = 0;
+            int min = 0;
+            List<int> list = new List<int>();
+            if (lines[0, 1] > lines[1, 0])
+            {
+                max = Math.Max(lines[0, 0], lines[1, 0]);
+                min = Math.Min(lines[0, 1], lines[1, 1]);
+
+                for (int i = max; i < min; i++)
+                {
+                    list.Add(i);
+                }
+            }
+            if (lines[0, 1] > lines[2, 0])
+            {
+                max = Math.Max(lines[0, 0], lines[2, 0]);
+                min = Math.Min(lines[0, 1], lines[2, 1]);
+
+                for (int i = max; i < min; i++)
+                {
+                    list.Add(i);
+                }
+            }
+            if (lines[1, 1] > lines[2, 0])
+            {
+                max = Math.Max(lines[1, 0], lines[2, 0]);
+                min = Math.Min(lines[1, 1], lines[2, 1]);
+
+                for (int i = max; i < min; i++)
+                {
+                    list.Add(i);
+                }
+            }
+            return list.Distinct().ToArray().Length;
+        }
 
         public int solution4(int a, int b) // 유한소수 판별하기
         {
